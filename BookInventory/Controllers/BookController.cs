@@ -36,7 +36,7 @@ namespace BookInventory.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] BookRequestDto bookDto)
+        public async Task<IActionResult> Create([FromBody] BookRequestDto bookDto)
         {
             Book book = new Book
             {
@@ -54,7 +54,7 @@ namespace BookInventory.Controllers
         }
 
         [HttpPut("{id:Guid}")]
-        public async Task<ActionResult> Update([FromRoute] Guid id, [FromBody] BookRequestDto bookDto)
+        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] BookRequestDto bookDto)
         {
             Book updatedbook = new Book
             {
@@ -80,7 +80,7 @@ namespace BookInventory.Controllers
         }
 
         [HttpDelete("{id:Guid}")]
-        public async Task<ActionResult> Delete([FromRoute] Guid id)
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             try
             {
